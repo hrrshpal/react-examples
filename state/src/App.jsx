@@ -5,16 +5,18 @@ const COLORS = ['pink', 'green', 'blue', 'yellow', 'purple'];
 
 function App() {
   const [backgroundColor, setBackgroundColor] = useState(COLORS[0]);
+  const [colorChangeCount, setColorChangeCount] = useState(0)
 
   const onButtonClick = (color) => () => {
     setBackgroundColor(color);
+    setColorChangeCount(colorChangeCount + 1)
   };
 
-  return (
+  return <>
     <div
       className="App"
       style={{
-        backgroundColor,
+        backgroundColor
       }}
     >
       {COLORS.map((color) => (
@@ -27,8 +29,13 @@ function App() {
           {color}
         </button>
       ))}
+
+      <button style={{display: "block"}}>
+        Color changed: {colorChangeCount} times
+      </button>
+
     </div>
-  );
+  </>
 }
 
 export default App;
