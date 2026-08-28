@@ -19,20 +19,16 @@ const FunctionalInput = ({ name }) => {
     setInputVal('');
   };
 
-  return (
+  return (  
     <section>
       <h3>{name}</h3>
       {/* The input field to enter To-Do's */}
       <form onSubmit={handleSubmit}>
         <label htmlFor="task-entry">Enter a task: </label>
-        <input
-          type="text"
-          name="task-entry"
-          value={inputVal}
-          onChange={handleInputChange}
-        />
+        <input type="text" name="task-entry" value={inputVal} onChange={handleInputChange}/>
         <button type="submit">Submit</button>
       </form>
+      
       <h4>All the tasks!</h4>
       {/* The list of all the To-Do's, displayed */}
       <ul>
